@@ -32,7 +32,9 @@ float bezier2(vector<float> v, float t) {
 	return 0;
 }
 
-//#####################################################################################
+//################################################################
+// /!\ DEIXE O CÓDIGO ABAIXO COMO ESTÁ /!\
+//################################################################
 
 float tAtual = 0.0; //um ponto é renderizado na reta
 int delta = 1; //= 1 ou -1... variação positiva ou negativa de tAtual, quando animacao = 1
