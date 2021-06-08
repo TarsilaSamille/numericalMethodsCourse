@@ -3,7 +3,7 @@
 int main() {
 
 	int xint;
-	float x = 100000000;
+	float x = 1.5;
 
 	memcpy(&xint, &x, sizeof(float));
 	xint += 1;
