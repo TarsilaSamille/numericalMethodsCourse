@@ -18,19 +18,24 @@ bezier2 <- function(s, t) {
 }
 
 #abscissas dos pontos
-xs <- c(1, 3, 5, 7)
+xs <- c(1, 3, 5, 7, 8)
 #ordenadas dos pontos
-ys <- c(1, 4, 3, 0)
+ys <- c(1, 4, 3, 0, 4)
 
-#apague um dos metodos nao utilizados abaixo (ou deixe ambas se tiver implementado ambas)
-print('Bézier usando a função recursiva:')
-for(t in seq(0,1,0.01)) {
-	p = c(bezier1(xs, 1, 4, t), bezier1(ys, 1, 4, t))
-	print(p)
+ptsx = c()
+ptsy = c()
+
+#altere para bezier2 caso queira usar a segunda função bézier
+for(t in seq(0,1,0.05)) {
+	x = bezier1(xs, 1, length(xs), t)
+	y = bezier1(ys, 1, length(ys), t)
+	ptsx = c(ptsx, x)
+	ptsy = c(ptsy, y)
+	#escreve na tela t, x e y do ponto
+	print(c(t, x, y))
 }
 
-print('Bézier usando a função não recursiva:')
-for(t in seq(0,1,0.01)) {
-	p = c(bezier2(xs, t), bezier2(ys, t))
-	print(p)
-}
+plot(xs, ys, type='b', col='gray')
+lines(ptsx, ptsy, type='l', col='blue')
+
+
