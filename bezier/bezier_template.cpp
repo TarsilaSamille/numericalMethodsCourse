@@ -9,6 +9,11 @@ using namespace std;
 
 enum {BEZIER_RECURSIVA, BEZIER_NAORECURSIVA};
 
+//vetor que contem as abscissas dos pontos
+vector<float> vx = {-1, 1, 2, 1};
+//vetor que contem as ordenadas dos pontos
+vector<float> vy = {2, 5, 5, 2};
+
 //implemente uma das duas funções abaixo, mude a variável metodo para alternar o uso de uma ou de outra
 //em ambas as funções, o parâmetro v contém ou só as abscissas dos pontos ou só as ordenadas
 // por exemplo, se os pontos são (0, 2), (3, 4) e (7, 5)
@@ -41,11 +46,6 @@ int delta = 1; //= 1 ou -1... variação positiva ou negativa de tAtual, quando 
 int animacao = 1;
 float top = 6, bottom = -4, left = -4, right = 6;
 int showGuideLines = true;
-
-//vetor que contem as abscissas dos pontos
-vector<float> vx;
-//vetor que contem as ordenadas dos pontos
-vector<float> vy;
 
 enum {ADICIONARREMOVER, ALTERAR};
 int estado = ADICIONARREMOVER;
@@ -259,13 +259,6 @@ int main(int argc, char **argv) {
 	glutDisplayFunc(funcaoDisplay);
 	glutIdleFunc(temporizador);
 	inicializacao();
-	
-	int x[] = {-1, 1, 2, 1};
-	int y[] = {2, 5, 5, 2};
-	for(int i = 0; i < 3; i++) {
-		vx.push_back(x[i]);
-		vy.push_back(y[i]);
-	}
 
 	glutMainLoop();
 
