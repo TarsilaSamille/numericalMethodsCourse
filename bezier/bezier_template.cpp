@@ -80,8 +80,14 @@ void funcaoDisplay() {
 	}
 
 	//renderização de tAtual
-	float px = bezier2(vx, tAtual);
-	float py = bezier2(vy, tAtual);
+	float px, py;
+	if(metodo == BEZIER_NAORECURSIVA) {
+		px = bezier2(vx, tAtual);
+		py = bezier2(vy, tAtual);
+	} else {
+		px = bezier1(vx, 0, vx.size()-1, tAtual);
+		py = bezier1(vy, 0, vy.size()-1, tAtual);
+	}
 
 	glColor3f(1, 1, 1);
 	glPointSize(6.0);
