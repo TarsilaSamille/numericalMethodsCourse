@@ -16,6 +16,11 @@ for i in range(0, 2*m):
     x.append(-math.pi+i*math.pi/m)
     y.append(f(x[i]))
 
+print('\nOs pontos sao: ')
+for i in zip(x, y):
+    print(i)
+
+print('\nOs coeficientes sao: ')
 a = []
 b = []
 
